@@ -33,6 +33,37 @@ If a project uses libraries, they should be specified as project dependencies wi
 
 ## Examples running maven phases
 
+Create project
+
+    $mvn -B archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DgroupId=org.interview -DartifactId=coding
+    ...
+    [INFO] BUILD SUCCESS
+    [INFO] ------------------------------------------------------------------------
+
+Add exec plugin to pom.xml
+
+    <build>
+      <plugins>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>exec-maven-plugin</artifactId>
+          <version>1.1</version>
+          <configuration>
+            <mainClass>org.interview.App</mainClass>
+          </configuration>
+        </plugin>
+      </plugins>
+    </build>
+
+Run main class
+     
+    mvn exec:java
+    [INFO] --- exec-maven-plugin:1.1:java (default-cli) @ coding ---
+    Hello World!
+    [INFO] ------------------------------------------------------------------------
+    [INFO] BUILD SUCCESS
+    [INFO] ------------------------------------------------------------------------
+
 Clean
 
     C:\huy\gitrepos\rubyjobbuilder\groovy>mvn clean
