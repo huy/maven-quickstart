@@ -6,25 +6,21 @@ I highlight here some differences Maven phase and goal is more less same as task
 
 When running Maven command line mvn, we specify phase or goal a input parameter. Number of phases are fixed for each life cycle. See [http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Lifecycle_Reference]
 
-Life cycles are either default, clean or site. As phases are unique among all life cycles, we don't care about a life cycle and just refer to a phase
-Phases are executed sequentially,  dependencies between phases are implicit.
+Life cycles are either default, clean or site. As phases are unique among all life cycles, we don't care about a life cycle and just refer to a phase. Phases are executed sequentially,  dependencies between phases are implicit.
 
-In order to have phase to do a meaningful stuff (compile, run test,  create package) we need to bind  goal(s) to a phase. A goal is a piece of code 
-implement in Maven Plugin that get executed to produce artifacts. 
+In order to have phase to do a meaningful stuff (compile, run test,  create package) we need to bind  goal(s) to a phase. A goal is a piece of code implement in Maven Plugin that get executed to produce artifacts. 
 
-Many goals can be bound to a phase. When running Maven command line mv with phase as input, bound goals get executed in the same order as they get attached 
-to the phase. 
+Many goals can be bound to a phase. When running Maven command line mvn with phase as input, bound goals get executed in the same order as they get attached to the phase. 
 
-When running Maven command line mvn with goal in form of plugin:goal as input, maven execute a specified goal implemented in the plugin Goals are implemented 
-in Maven Plugins e.g. java compiler plugins, test runner plugin. 
+When running Maven command line mvn with goal in form of plugin:goal as input, maven execute a specified goal implemented in the plugin Goals are implemented in Maven Plugins e.g. java compiler plugins, test runner plugin.
 
 Maven provides core plugins and default binding to support most typical java project. E.g  bindings when we specifies 'pom' as packaging (in POM file) is
 
  Phase         | Goal(s)                | Notes 
  ------------- |------------------------| --------------------------------------------------
  package       | site:attach-descriptor | run attach-descriptor goal provided by plugin site
- install	   | install:install	    | run install goal provided by plugin install
- deploy	       | deploy:deploy	        | run deploy goal provided by plugin deploy
+ install	      | install:install	       | run install goal provided by plugin install
+ deploy	       | deploy:deploy	         | run deploy goal provided by plugin deploy
 
 Maven is driven by pom.xml file. POM file specifies how goals are bound to each phase. A plugin may also specify default binding (using @phase notation) for it goals. See [http://maven.apache.org/pom.html].
 
