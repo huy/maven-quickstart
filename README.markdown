@@ -49,7 +49,7 @@ Add exec plugin to pom.xml
           <artifactId>exec-maven-plugin</artifactId>
           <version>1.1</version>
           <configuration>
-            <mainClass>org.interview.App</mainClass>
+            <mainClass>com.foo.MainApp</mainClass>
           </configuration>
         </plugin>
       </plugins>
