@@ -105,3 +105,12 @@ Test single method
        Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.727 sec
        Results :
        Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+Show dependency tree
+
+      sh-3.1$ mvn dependency:tree -Dverbose
+      [INFO] com.example:simple-service:jar:1.0-SNAPSHOT
+      [INFO] +- org.glassfish.jersey.containers:jersey-container-grizzly2-http:jar:2.16:compile
+      [INFO] |  +- org.glassfish.hk2.external:javax.inject:jar:2.4.0-b09:compile
+      [INFO] |  +- org.glassfish.grizzly:grizzly-http-server:jar:2.3.16:compile
+      ...
