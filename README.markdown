@@ -106,6 +106,23 @@ Test single method
        Results :
        Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
 
+Compile 
+       $ mvn compile
+       ...
+       [INFO] ------------------------------------------------------------------------
+       [INFO] BUILD SUCCESS
+       [INFO] ------------------------------------------------------------------------
+
+Compile test classes
+
+       huy$ mvn test-compile
+       [INFO] Scanning for projects...
+       [INFO]                                                                         
+       [INFO] ------------------------------------------------------------------------
+       [INFO] Building lca 1.0-SNAPSHOT
+       [INFO] ------------------------------------------------------------------------
+       [INFO] 
+
 Show dependency tree
 
       sh-3.1$ mvn dependency:tree -Dverbose
