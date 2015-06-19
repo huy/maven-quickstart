@@ -42,11 +42,10 @@ E.g  bindings when we specifies `pom` as packaging (in POM file) is
 
 Maven is driven by `pom.xml` file. POM file specifies how goals are bound to each phase. A plugin may also specify default binding (using `@phase` notation) for it goals. See [http://maven.apache.org/pom.html].
 
-POM stands for Project Object Model. POM can be inherited. A child POM inherits all setting from its parent then enrich or override certain behavior following the 
-same OOP paradigm. The effective POM can be showed using 
+POM stands for Project Object Model. POM can be inherited. A child POM inherits all setting from its parent then enrich or override certain behavior following the same OOP paradigm. The effective POM can be showed using 
 
-    mvn org.apache.maven.plugins:maven-help-plugin:2.2:effective-pom
-
+    mvn help:effective-pom
+    
 If a project uses libraries, they should be specified as project dependencies with version and repository from which maven downloads when needed
 
 **plugin**
@@ -109,6 +108,58 @@ Inspecting source code to find out a default binding is tedious, there is a [mav
 **running**
 
 We run maven by type `mvn` and one of phases defined by maven [here](http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Lifecycle_Reference) or a goals implemented by a plugin specified in `pom.xml`. If it is a phase then depending on goal to phase binding defined in plugins, appropriate goals will be executed . Some typical examples are [here](example.md).
+
+**help**
+
+As mentioned above, a lot of maven behaviours is implicit (hidden), it is quite difficult to have an idea what happens if we run a maven phase. Our life line is in the [maven help plugin](http://maven.apache.org/plugins/maven-help-plugin/describe-mojo.html) which provides handy goals to reveal what happen behind the scene. 
+
+    mvn help:help
+
+    INFO] Maven Help Plugin 2.2
+      The Maven Help plugin provides goals aimed at helping to make sense out of the
+      build environment. It includes the ability to view the effective POM and
+      settings files, after inheritance and active profiles have been applied, as
+      well as a describe a particular plugin goal to give usage information.
+
+   This plugin has 9 goals:
+
+   help:active-profiles
+      Displays a list of the profiles which are currently active for this build.
+
+   help:all-profiles
+      Displays a list of available profiles under the current project.
+      Note: it will list all profiles for a project. If a profile comes up with a
+      status inactive then there might be a need to set profile activation
+      switches/property.
+
+   help:describe
+      Displays a list of the attributes for a Maven Plugin and/or goals (aka Mojo -
+      Maven plain Old Java Object).
+
+   help:effective-pom
+      Displays the effective POM as an XML for this build, with the active profiles
+      factored in.
+
+   help:effective-settings
+      Displays the calculated settings as XML for this project, given any profile
+      enhancement and the inheritance of the global settings into the user-level
+      settings.
+
+   help:evaluate
+      Evaluates Maven expressions given by the user in an interactive mode.
+
+   help:expressions
+      Displays the supported Plugin expressions used by Maven.
+
+   help:help
+      Display help information on maven-help-plugin.
+      Call mvn help:help -Ddetail=true -Dgoal=<goal-name> to display parameter
+      details.
+
+   help:system
+      Displays a list of the platform details like system properties and environment
+      variables.    
+   
 
 **references**
 
