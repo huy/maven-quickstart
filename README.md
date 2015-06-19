@@ -49,7 +49,7 @@ If a project uses libraries, they should be specified as project dependencies wi
 
 **plugin**
 
-Plugins can be written in Java or any of a number of scripting languages. Plugins consists of one or more Mojos, each one being the implementation for one of the plugin's goals. To make use of a plugin and the plugin goals, we need to specify it in `pom.xml`. E.g.
+Plugins can be written in Java or any of a number of scripting languages. Plugins consists of one or more `mojos`, each one being the implementation for one of the plugin's goals. To make use of a plugin and the plugin goals, we need to specify it in `pom.xml`. E.g.
 
     <project>
     ...
