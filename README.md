@@ -75,4 +75,4 @@ Plugins can be written in Java or any of a number of scripting languages. Plugin
 
 **running**
 
-We run maven by type `mvn` and one of phases defined by maven in [http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Lifecycle_Reference] or a goals implemented by a plugin specified in `pom.xml`. If it is a phase then depending on goal to phase binding defined in plugins, appropriate goals will be executed .
+We run maven by type `mvn` and one of phases defined by maven [here](http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Lifecycle_Reference) or a goals implemented by a plugin specified in `pom.xml`. If it is a phase then depending on goal to phase binding defined in plugins, appropriate goals will be executed .
