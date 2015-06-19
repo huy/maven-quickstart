@@ -14,7 +14,15 @@ Many goals can be bound to a phase. When running Maven command line mvn with pha
 
 When running Maven command line mvn with goal in form of plugin:goal as input, maven execute a specified goal implemented in the plugin Goals are implemented in Maven Plugins e.g. java compiler plugins, test runner plugin.
 
-Maven provides core plugins and default binding to support most typical java project. E.g  bindings when we specifies 'pom' as packaging (in POM file) is
+Maven provides core plugins and default binding to support most typical java project, which is specified using tag `packaging` in `pom.xml` file. 
+    
+     </project>
+     ...  
+       <packaging>war</packaging>
+     ...
+     </project>
+
+E.g  bindings when we specifies 'pom' as packaging (in POM file) is
 
  Phase         | Goal(s)                | Notes 
  ------------- |------------------------| --------------------------------------------------
