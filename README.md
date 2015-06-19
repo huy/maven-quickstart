@@ -10,7 +10,7 @@ When running Maven command line `mvn`, we specify either `phase` or `goal` a inp
 
 Life cycles are either `default`, `clean` or `site`. As `phase`s are unique among all life cycles, we don't care about a life cycle and just work with `phase` and `goal`. Phases are executed sequentially,  dependencies between phases are implicit.
 
-A phase name is by convention a single identification e.g. `compile`, `test`, `test-compile` while a goal name is combination of 2 or more identifications separated by `:` in form of  `<plugin-prefix>:<goal>` or `<plugin-group-id>:<plugin-artifact-id>[:<plugin-version>]:<goal>`
+A phase is by convention a single name e.g. `compile`, `test`, `test-compile` while a goal is combination of 2 or more names separated by `:` in form of  `<plugin-prefix>:<goal>` or `<plugin-group-id>:<plugin-artifact-id>[:<plugin-version>]:<goal>`
 
 In order to have `phase` to do a meaningful stuff (compile, run test,  create package) we need to bind  `goal`(s) to a `phase`. A `goal` is a piece of code implement in Maven Plugin that get executed to produce artifacts. 
 
