@@ -8,7 +8,9 @@ I highlight here some differences Maven phase and goal is more less same as task
 
 When running Maven command line `mvn`, we specify either `phase` or `goal` a input parameter. Number of `phase`s are fixed for each life cycle. See [http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Lifecycle_Reference]
 
-Life cycles are either `default`, `clean` or `site`. As `phase`s are unique among all life cycles, we don't care about a life cycle and just work with `phase` and `goal`. Phases are executed sequentially. Phases of the same life cycle depend on each other. The phases dependencies (not the same as dependencies between project and libraries) are implicit (i.e predefined/hardcoded). E.g `test` phase depdends `test-compile`, which in turn depends on `compile`.
+Life cycles are either `default`, `clean` or `site`. Each life cycle has a number of `phases`. As `phase`s are unique among all life cycles, we don't care about a life cycle and just work with `phase` and `goal`. 
+
+Phases are executed sequentially. Phases of the same life cycle depend on each other. The phases dependencies (not the same as dependencies between project and libraries) are implicit (i.e predefined/hardcoded). E.g `test` phase depdends `test-compile`, which in turn depends on `compile`.
 
 A phase is by convention a single name e.g. `compile`, `test`, `test-compile` while a goal is combination of 2 or more names separated by `:` in form of  `<plugin-prefix>:<goal>` or `<plugin-group-id>:<plugin-artifact-id>[:<plugin-version>]:<goal>`
 
