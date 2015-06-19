@@ -22,15 +22,15 @@ Maven provides core plugins and default binding to support most typical java pro
      ...
      </project>
 
-E.g  bindings when we specifies 'pom' as packaging (in POM file) is
+E.g  bindings when we specifies `pom` as packaging (in POM file) is
 
  Phase         | Goal(s)                | Notes 
  ------------- |------------------------| --------------------------------------------------
  package       | site:attach-descriptor | run attach-descriptor goal provided by plugin site
- install	      | install:install	       | run install goal provided by plugin install
- deploy	       | deploy:deploy	         | run deploy goal provided by plugin deploy
+ install	   | install:install	    | run install goal provided by plugin install
+ deploy	       | deploy:deploy	        | run deploy goal provided by plugin deploy
 
-Maven is driven by pom.xml file. POM file specifies how goals are bound to each phase. A plugin may also specify default binding (using @phase notation) for it goals. See [http://maven.apache.org/pom.html].
+Maven is driven by `pom.xml` file. POM file specifies how goals are bound to each phase. A plugin may also specify default binding (using `@phase` notation) for it goals. See [http://maven.apache.org/pom.html].
 
 POM stands for Project Object Model. POM can be inherited. A child POM inherits all setting from its parent then enrich or override certain behavior following the 
 same OOP paradigm. The effective POM can be showed using 
