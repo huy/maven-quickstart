@@ -36,7 +36,7 @@ E.g  bindings when we specifies `pom` as packaging (in POM file) is
  install	   | install:install	    | run install goal provided by plugin install
  deploy	       | deploy:deploy	        | run deploy goal provided by plugin deploy
 
-**pom**
+**pom.xml**
 
 Maven is driven by `pom.xml` file. POM file specifies how goals are bound to each phase. A plugin may also specify default binding (using `@phase` notation) for it goals. See [http://maven.apache.org/pom.html].
 
@@ -49,4 +49,28 @@ If a project uses libraries, they should be specified as project dependencies wi
 
 **plugin**
 
-Plugins can be written in Java or any of a number of scripting languages. Plugins consists of one or more Mojos, each one being the implementation for one of the plugin's goals.
+Plugins can be written in Java or any of a number of scripting languages. Plugins consists of one or more Mojos, each one being the implementation for one of the plugin's goals. To make use of a plugin and the plugin goals, we need to specify it in `pom.xml`. E.g.
+
+    <project>
+    ...
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-myquery-plugin</artifactId>
+            <version>1.0</version>
+            <configuration>
+              <url>http://www.foobar.com/query</url>
+              <timeout>10</timeout>
+              <options>
+                <option>one</option>
+                <option>two</option>
+                <option>three</option>
+              </options>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    ...
+    </project>
+
+
