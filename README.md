@@ -99,17 +99,13 @@ Binding goal to phase (aka attaching goal to phase) is crucial to maven. Binding
     ...
     </project>
 
-Inspecting source code to find out a default binding is tedious, there is a [maven help plugin](http://maven.apache.org/plugins/maven-help-plugin/describe-mojo.html) that does the job for us. This example show what `compile` goal of `maven-compiler-plugin` is bound to 
+Inspecting source code to find out a default binding is tedious, there is a [maven help plugin](http://maven.apache.org/plugins/maven-help-plugin/describe-mojo.html) that does the job for us. This example show which goals are bound to phase `compile` 
 
-    mvn help:describe -DartifactId=maven-compiler-plugin -DgroupId=org.apache.maven.plugins -Dgoal=compile -Ddetail
+    mvn help:describe -Dcmd=compile
 
-    [INFO] Mojo: 'compiler:compile'
-    compiler:compile
-    Description: Compiles application sources
-    Implementation: org.apache.maven.plugin.compiler.CompilerMojo
-    Language: java
-    Bound to phase: compile
-  
+    [INFO] 'compile' is a phase corresponding to this plugin:
+    org.apache.maven.plugins:maven-compiler-plugin:2.3.2:compile
+
 **running**
 
 We run maven by type `mvn` and one of phases defined by maven [here](http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Lifecycle_Reference) or a goals implemented by a plugin specified in `pom.xml`. If it is a phase then depending on goal to phase binding defined in plugins, appropriate goals will be executed . Some typical examples are [here](example.md).
