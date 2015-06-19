@@ -73,7 +73,7 @@ Plugins can be written in Java or any of a number of scripting languages. Plugin
     ...
     </project>
 
-Binding goal to phase (aka attaching goal to phase) is crucial to maven. Binding can be done in source code using anotation (e.g. `@phase`) or explictily in `pom.xml`.
+Binding goal to phase (aka attaching goal to phase) is crucial to maven. Binding can be done implicitly in source code (default binding) using anotation (e.g. `@phase`) or explictily in `pom.xml`.
 
     <project>
     ...
