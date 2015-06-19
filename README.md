@@ -73,6 +73,30 @@ Plugins can be written in Java or any of a number of scripting languages. Plugin
     ...
     </project>
 
+Binding goal to phase (aka attaching goal to phase) is crucial to maven. Binding can be done in source code using anotation (e.g. `@phase`) or explictily in `pom.xml`.
+
+    <project>
+    ...
+	  <build>
+		<plugins>
+			<plugin>
+				<groupId>com.maventest</groupId>
+				<artifactId>maven-howdy-plugin</artifactId>
+				<version>1.0-SNAPSHOT</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>howdy-world</goal>
+						</goals>
+						<phase>validate</phase>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	  </build>
+    ...
+    </project>
+
 **running**
 
 We run maven by type `mvn` and one of phases defined by maven [here](http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Lifecycle_Reference) or a goals implemented by a plugin specified in `pom.xml`. If it is a phase then depending on goal to phase binding defined in plugins, appropriate goals will be executed . Some typical examples are [here](example.md).
