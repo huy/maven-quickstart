@@ -10,11 +10,14 @@ When running Maven command line `mvn`, we specify either `phase` or `goal` a inp
 
 Life cycles are either `default`, `clean` or `site`. Each life cycle has a number of `phases`. As `phase`s are unique among all life cycles, we don't care about a life cycle and just work with `phase` and `goal`. 
 
-Phases are executed sequentially. Phases of the same life cycle depend on each other. The phases dependencies (not the same as dependencies between project and libraries) are implicit (i.e predefined/hardcoded). E.g `test` phase depdends `test-compile`, which in turn depends on `compile`.
-
 A phase is by convention a single name e.g. `compile`, `test`, `test-compile` while a goal is combination of 2 or more names separated by `:` in form of  `<plugin-prefix>:<goal>` or `<plugin-group-id>:<plugin-artifact-id>[:<plugin-version>]:<goal>`
 
 In order to have `phase` to do a meaningful stuff (compile, run test,  create package) we need to bind  `goal`(s) to a `phase`. A `goal` is a piece of code implement in Maven Plugin that get executed to produce artifacts.  It is much like makefile with predefined number of targets or rakefile with fixed number of tasks, that can't be changed and we can only implement our build logic by attaching action to target or task.
+
+**phase dependencies**
+
+Phases are executed sequentially. Phases of the same life cycle depend on each other. The phases dependencies (not the same as dependencies between project and libraries) are implicit (i.e predefined/hardcoded). E.g `test` phase depdends `test-compile`, which in turn depends on `compile`. In fact, it phases in a life cycle is ordered totally, execute one phase means execute all preceeding phases in order and then the phase.
+
 
 **binding**
 
@@ -165,3 +168,4 @@ As mentioned above, a lot of maven behaviours is implicit (hidden), it is quite 
 
 * http://tutorials.jenkov.com/maven/maven-tutorial.htm
 * http://www.avajava.com/tutorials/lessons/how-do-i-attach-a-plugin-goal-to-a-particular-phase-of-a-maven-lifecycle.html
+* http://www.avajava.com/tutorials/lessons/what-are-the-phases-of-the-maven-default-lifecycle.html
