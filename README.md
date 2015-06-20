@@ -1,12 +1,10 @@
 ## Basic concepts
 
-Maven is predominant build tool for java ecosystem. It is significant differently compare to traditional build tools such as make, ant, rake. 
-
-I highlight here some differences Maven phase and goal is more less same as task in other tools. 
+Maven is predominant build tool for java ecosystem. It is significant differently compare to traditional build tools such as make, ant, rake. I highlight here some differences. 
 
 **phase and goal**
 
-When running Maven command line `mvn`, we specify either `phase` or `goal` a input parameter. Number of `phase`s and their execution order are fixed for each life cycle. See [http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Lifecycle_Reference]
+Maven phase and goal is more less same as task in other tools.  When running Maven command line `mvn`, we specify either `phase` or `goal` a input parameter. Number of `phase`s and their execution order are fixed for each life cycle. See [http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Lifecycle_Reference]
 
 Life cycles are either `default`, `clean` or `site`. Each life cycle has a number of `phases`. As `phase`s are unique among all life cycles, we don't care about a life cycle and just work with `phase` and `goal`. 
 
