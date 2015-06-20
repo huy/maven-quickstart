@@ -1,6 +1,6 @@
 ## Basic concepts
 
-Maven is predominant build tool for java ecosystem. It is significant different compare to traditional build tools such as make, ant, rake. 
+Maven is predominant build tool for java ecosystem. It is significant differently compare to traditional build tools such as make, ant, rake. 
 
 I highlight here some differences Maven phase and goal is more less same as task in other tools. 
 
