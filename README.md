@@ -6,7 +6,7 @@ I highlight here some differences Maven phase and goal is more less same as task
 
 **phase and goal**
 
-When running Maven command line `mvn`, we specify either `phase` or `goal` a input parameter. Number of `phase`s are fixed for each life cycle. See [http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Lifecycle_Reference]
+When running Maven command line `mvn`, we specify either `phase` or `goal` a input parameter. Number of `phase`s and their execution order are fixed for each life cycle. See [http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Lifecycle_Reference]
 
 Life cycles are either `default`, `clean` or `site`. Each life cycle has a number of `phases`. As `phase`s are unique among all life cycles, we don't care about a life cycle and just work with `phase` and `goal`. 
 
@@ -14,10 +14,11 @@ A phase is by convention a single name e.g. `compile`, `test`, `test-compile` wh
 
 In order to have `phase` to do a meaningful stuff (compile, run test,  create package) we need to bind  `goal`(s) to a `phase`. A `goal` is a piece of code implement in Maven Plugin that get executed to produce artifacts.  It is much like makefile with predefined number of targets or rakefile with fixed number of tasks, that can't be changed and we can only implement our build logic by attaching action to target or task.
 
-**phase dependencies**
+**phase execution**
 
-Phases are executed sequentially. Phases of the same life cycle depend on each other. The phases dependencies (not the same as dependencies between project and libraries) are implicit (i.e predefined/hardcoded). E.g `test` phase depdends `test-compile`, which in turn depends on `compile`. In fact, it phases in a life cycle is ordered totally, execute one phase means execute all preceeding phases in order and then the phase.
+Phases are executed sequentially. Phases of the same life cycle are ordered totally, execute one phase means execute all preceeding phases in order and then the desire phase.
 
+Author of maven seems doesn't want the sophistication of [dependency based programming](http://martinfowler.com/articles/rake.html#DependencyBasedProgramming) e.g `test` phase depdends `test-compile`, which in turn depends on `compile`. They chose to ignore it completely.
 
 **binding**
 
@@ -169,3 +170,4 @@ As mentioned above, a lot of maven behaviours is implicit (hidden), it is quite 
 * http://tutorials.jenkov.com/maven/maven-tutorial.htm
 * http://www.avajava.com/tutorials/lessons/how-do-i-attach-a-plugin-goal-to-a-particular-phase-of-a-maven-lifecycle.html
 * http://www.avajava.com/tutorials/lessons/what-are-the-phases-of-the-maven-default-lifecycle.html
+* http://martinfowler.com/articles/rake.html#DependencyBasedProgramming
