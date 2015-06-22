@@ -126,44 +126,18 @@ As mentioned above, a lot of maven behaviours is implicit (hidden), it is quite 
       well as a describe a particular plugin goal to give usage information.
 
     This plugin has 9 goals:
-    
-    help:active-profiles
-      Displays a list of the profiles which are currently active for this build.
-    
-    help:all-profiles
-      Displays a list of available profiles under the current project.
-      Note: it will list all profiles for a project. If a profile comes up with a
-      status inactive then there might be a need to set profile activation
-      switches/property.
-    
+    ...    
+
     help:describe
       Displays a list of the attributes for a Maven Plugin and/or goals (aka Mojo -
       Maven plain Old Java Object).
-
-    help:effective-pom
-      Displays the effective POM as an XML for this build, with the active profiles
-      factored in.
-
-    help:effective-settings
-      Displays the calculated settings as XML for this project, given any profile
-      enhancement and the inheritance of the global settings into the user-level
-      settings.
-
-    help:evaluate
-      Evaluates Maven expressions given by the user in an interactive mode.
-
-    help:expressions
-      Displays the supported Plugin expressions used by Maven.
 
     help:help
       Display help information on maven-help-plugin.
       Call mvn help:help -Ddetail=true -Dgoal=<goal-name> to display parameter
       details.
+    ...
 
-    help:system
-      Displays a list of the platform details like system properties and environment
-      variables.    
-   
 
 **references**
 
