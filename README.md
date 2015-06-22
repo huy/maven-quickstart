@@ -131,11 +131,6 @@ As mentioned above, a lot of maven behaviours is implicit (hidden), it is quite 
     help:describe
       Displays a list of the attributes for a Maven Plugin and/or goals (aka Mojo -
       Maven plain Old Java Object).
-
-    help:help
-      Display help information on maven-help-plugin.
-      Call mvn help:help -Ddetail=true -Dgoal=<goal-name> to display parameter
-      details.
     ...
 
 
