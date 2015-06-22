@@ -14,12 +14,6 @@ The mapping rule of goal full name to prefix name is described in [https://maven
 
 In order to have `phase` to do a meaningful stuff (compile, run test,  create package) we need to bind  `goal`(s) to a `phase`. A `goal` is a piece of code implement in Maven Plugin that get executed to produce artifacts.  It is much like makefile with predefined number of targets or rakefile with fixed number of tasks, that can't be changed and we can only implement our build logic by attaching action to target or task.
 
-**phase execution**
-
-Phases are executed sequentially. Phases of the same life cycle are ordered totally, execute one phase means execute all preceeding phases in order and then the desire phase.
-
-Author of maven chose not to allow users to exercise [dependency based programming](http://martinfowler.com/articles/rake.html#DependencyBasedProgramming) in maven `pom.xml`.
-
 **binding**
 
 Many `goal`s can be bound to a `phase`. When running Maven command line `mvn` with `phase` as input, bound `goal`s get executed in the same order as they get attached to the `phase`. 
@@ -51,6 +45,12 @@ POM stands for Project Object Model. POM can be inherited. A child POM inherits 
     mvn help:effective-pom
     
 If a project uses libraries, they should be specified as project dependencies with version and repository from which maven downloads when needed
+
+**phase execution**
+
+Phases are executed sequentially. Phases of the same life cycle are ordered totally, execute one phase means execute all preceeding phases in order and then the desire phase.
+
+Author of maven chose not to allow users to exercise [dependency based programming](http://martinfowler.com/articles/rake.html#DependencyBasedProgramming) in maven `pom.xml`.
 
 **plugin**
 
