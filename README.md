@@ -111,7 +111,7 @@ Inspecting source code to find out a default binding is tedious, there is a [mav
 
 **running**
 
-We run maven by type `mvn` and one of phases defined by maven [here](http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Lifecycle_Reference) or a goals implemented by a plugin specified in `pom.xml`. If it is a phase then depending on goal to phase binding defined in plugins, appropriate goals will be executed . Some typical examples are [here](example.md).
+We run maven by type `mvn` and one of phases defined by maven [here](http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Lifecycle_Reference) or a goals implemented by a plugin specified in `pom.xml`. If it is a phase then depending on binding defined in plugins or `pom.xml` , appropriate goals will be executed . Some typical examples are [here](example.md).
 
 **help**
 
