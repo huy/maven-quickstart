@@ -46,12 +46,6 @@ POM stands for Project Object Model. POM can be inherited. A child POM inherits 
     
 If a project uses libraries, they should be specified as project dependencies with version and repository from which maven downloads when needed
 
-**phase execution**
-
-Phases are executed sequentially. Phases of the same life cycle are ordered totally, execute one phase means execute all preceeding phases in order and then the desire phase.
-
-Author of maven chose not to allow users to exercise [dependency based programming](http://martinfowler.com/articles/rake.html#DependencyBasedProgramming) in maven `pom.xml`.
-
 **plugin**
 
 Plugins can be written in Java or any of a number of scripting languages. Plugins consists of one or more `mojos`, each one being the implementation for one of the plugin's goals. To make use of a plugin and the plugin goals, we need to specify it in `pom.xml`. E.g.
@@ -109,9 +103,16 @@ Inspecting source code to find out a default binding is tedious, there is a [mav
     [INFO] 'compile' is a phase corresponding to this plugin:
     org.apache.maven.plugins:maven-compiler-plugin:2.3.2:compile
 
-**running**
+**execution**
 
-We run maven by type `mvn` and one of phases defined by maven [here](http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Lifecycle_Reference) or a goals implemented by a plugin specified in `pom.xml`. If it is a phase then depending on binding defined in plugins or `pom.xml` , appropriate goals will be executed . Some typical examples are [here](example.md).
+We run maven by type `mvn` and one or more of phases defined by maven [here](http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Lifecycle_Reference) or a goals implemented by a plugin specified in `pom.xml`. 
+
+Phases of the same life cycle are ordered totally, execute a phase means execute all preceeding phases in order and then the desire phase.
+
+For each phase depending on binding defined in plugins or `pom.xml` , appropriate goals will be executed . Some typical examples are [here](example.md).
+
+
+Author of maven chose not to allow users to exercise [dependency based programming](http://martinfowler.com/articles/rake.html#DependencyBasedProgramming) in maven `pom.xml`.
 
 **help**
 
