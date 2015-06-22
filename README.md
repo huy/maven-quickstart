@@ -8,7 +8,9 @@ Maven phase and goal is more less same as task in other tools.  When running Mav
 
 Life cycles are either `default`, `clean` or `site`. Each life cycle has a number of `phases`. As `phase`s are unique among all life cycles, we don't care about a life cycle and just work with `phase` and `goal`. 
 
-A phase is by convention a single name e.g. `compile`, `test`, `test-compile` while a goal is combination of 2 or more names separated by `:` in form of  `<plugin-prefix>:<goal>` or `<plugin-group-id>:<plugin-artifact-id>[:<plugin-version>]:<goal>`
+A phase is by convention a single name e.g. `compile`, `test`, `test-compile` while a goal is in form of `<plugin-group-id>:<plugin-artifact-id>[:<plugin-version>]:<goal>` (full name) or `<plugin-prefix>:<goal>` (prefix name). 
+
+The mapping rule of goal full name to prefix name is described in https://maven.apache.org/guides/introduction/introduction-to-plugin-prefix-mapping.html
 
 In order to have `phase` to do a meaningful stuff (compile, run test,  create package) we need to bind  `goal`(s) to a `phase`. A `goal` is a piece of code implement in Maven Plugin that get executed to produce artifacts.  It is much like makefile with predefined number of targets or rakefile with fixed number of tasks, that can't be changed and we can only implement our build logic by attaching action to target or task.
 
@@ -37,7 +39,7 @@ E.g  bindings when we specifies `pom` as packaging (in POM file) is
  Phase         | Goal(s)                | Notes 
  ------------- |------------------------| --------------------------------------------------
  package       | site:attach-descriptor | run attach-descriptor goal provided by plugin site
- install	   | install:install	    | run install goal provided by plugin install
+ install       | install:install        | run install goal provided by plugin install
  deploy	       | deploy:deploy	        | run deploy goal provided by plugin deploy
 
 **pom.xml**
