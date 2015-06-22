@@ -18,7 +18,7 @@ In order to have `phase` to do a meaningful stuff (compile, run test,  create pa
 
 Phases are executed sequentially. Phases of the same life cycle are ordered totally, execute one phase means execute all preceeding phases in order and then the desire phase.
 
-Author of maven seems doesn't want the sophistication of [dependency based programming](http://martinfowler.com/articles/rake.html#DependencyBasedProgramming) e.g `test` phase depdends `test-compile`, which in turn depends on `compile`. They chose to ignore it completely.
+Author of maven chose not to allow users to exercise [dependency based programming](http://martinfowler.com/articles/rake.html#DependencyBasedProgramming) in maven `pom.xml`.
 
 **binding**
 
