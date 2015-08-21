@@ -5,9 +5,9 @@ There are in general 2 types of test
 * unit test and 
 * integration test. 
 
-**unit test**
+## unit test
 
-Unit tests are executed as default by maven surefire plugin. The `default` means that whenever we `pom.xml` it inherit the maven default pom, which has already binding test phase to maven surefire plugin test goal. We can confirm it by creating this bare pom.xml
+Unit tests are executed as default by maven surefire plugin. The `default` means that whenever we `pom.xml` it inherit the maven default pom, which has already binding test phase to maven surefire plugin test goal. We can confirm it by creating this bare `pom.xml`
 
     $ cat pom.xml
     <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -40,6 +40,17 @@ then look at effective pom
 The surefire plugin by default runs all test classes with the following wildcard patterns
 By default, the Surefire Plugin will automatically include all test classes with the following wildcard patterns
 `**/Test*.java`, `**/*Test.java`, `**/*TestCase.java`. This can be changed as described [here](https://maven.apache.org/surefire/maven-surefire-plugin/examples/inclusion-exclusion.html)
+
+## Integration test
+
+Integration tests are usually executed by maven failsafe plugin. This plugin needs to be explicitly added in to our `pom.xml` as 
+
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-failsafe-plugin</artifactId>
+          </plugin>
+        </plugins>        
 
 References
 
