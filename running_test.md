@@ -1,6 +1,6 @@
 # Running test
 
-There are unit test and integration test. Unit tests are executed as default by maven surefire plugin. The `default` means that whenever we `pom.xml` it inherit the maven default pom, which has already binding test phase to maven surefire plugin test goal. We can see it by looking at this bare pom.xml
+There are unit test and integration test. Unit tests are executed as default by maven surefire plugin. The `default` means that whenever we `pom.xml` it inherit the maven default pom, which has already binding test phase to maven surefire plugin test goal. We can confirm it by creating this bare pom.xml
 
     $ cat pom.xml
     <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -13,6 +13,8 @@ There are unit test and integration test. Unit tests are executed as default by 
       <name>sample</name>
     </project>
     
+then look at effective pom
+
     $bash-3.2$ mvn help:effective-pom  | grep -A 10 -B 1 surefire
     [MVNVM] Using maven: 3.2.5
       <plugin>
