@@ -8,7 +8,7 @@ Maven phase and goal is more less same as task in other tools.  When running Mav
 
 Life cycles are either `default`, `clean` or `site`. Each life cycle has a number of phases. As phases are unique among all life cycles, we don't care much about a life cycle and just work with `phase` and `goal`. 
 
-A phase is by convention a single name e.g. `compile`, `test`, `test-compile` while a goal is in form of `<plugin-group-id>:<plugin-artifact-id>[:<plugin-version>]:<goal>` aka comlete name or `<plugin-prefix>:<goal>` aka prefix name. 
+A phase is by convention a single name e.g. `compile`, `test`, `test-compile` while a goal is in form of `<plugin-group-id>:<plugin-artifact-id>[:<plugin-version>]:<goal>` aka complete name or `<plugin-prefix>:<goal>` aka prefix name. 
 
 The mapping rule of goal complete name to prefix name is described in [https://maven.apache.org/guides/introduction/introduction-to-plugin-prefix-mapping.html]
 
