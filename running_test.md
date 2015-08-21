@@ -52,6 +52,8 @@ Integration tests are usually executed by maven failsafe plugin. This plugin nee
           </plugin>
         </plugins>        
 
+The test classes to be executed are those of the following wildcard patterns `**/IT*.java`, `**/*IT.java`, `**/*ITCase.java`. Inclusion/exclusion is possible via a instruction [here](https://maven.apache.org/surefire/maven-failsafe-plugin/examples/inclusion-exclusion.html)
+
 References
 
 * https://maven.apache.org/surefire/maven-surefire-plugin/
