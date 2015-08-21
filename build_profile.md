@@ -23,6 +23,13 @@ If the profile is not activated by default, then we can activate it explicitly b
 
      $mvn install -P integ
 
+There are in facts many other ways to activate profile such as
+
+* Through Maven settings
+* Based on environment variables
+* OS settings
+* Present or missing files
+
 References
 
 * http://maven.apache.org/guides/introduction/introduction-to-profiles.html
