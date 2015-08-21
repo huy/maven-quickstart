@@ -52,6 +52,29 @@ Integration tests are usually executed by maven failsafe plugin. This plugin nee
           </plugin>
         </plugins>        
 
+The plugin provides the following goals
+
+    $mvn help:describe -Dplugin=org.apache.maven.plugins:maven-failsafe-plugin
+    Name: Maven Failsafe Plugin
+    Description: Surefire is a test framework project.
+    Group Id: org.apache.maven.plugins
+    Artifact Id: maven-failsafe-plugin
+    Version: 2.18.1
+    Goal Prefix: failsafe
+
+    This plugin has 3 goals:
+
+    failsafe:help
+      Description: Display help information on maven-failsafe-plugin.
+      Call mvn failsafe:help -Ddetail=true -Dgoal=<goal-name> to display
+      parameter details.
+
+    failsafe:integration-test
+      Description: Run integration tests using Surefire.
+
+    failsafe:verify
+      Description: Verify integration tests ran using Surefire.
+
 The test classes to be executed are those of the following wildcard patterns `**/IT*.java`, `**/*IT.java`, `**/*ITCase.java`. Inclusion/exclusion is possible via a instruction [here](https://maven.apache.org/surefire/maven-failsafe-plugin/examples/inclusion-exclusion.html)
 
 References
