@@ -111,29 +111,7 @@ Phases of the same life cycle are ordered totally, execute a phase means execute
 
 For each phase depending on binding defined in plugins or `pom.xml` , appropriate goals will be executed . Some typical examples are [here](example.md).
 
-
 Author of maven chose not to allow users to exercise [dependency based programming](http://martinfowler.com/articles/rake.html#DependencyBasedProgramming) in maven `pom.xml`.
-
-**help**
-
-As mentioned above, a lot of maven behaviours is implicit (hidden), it is quite difficult to have an idea what happens if we run a maven phase. Our life line is in the [maven help plugin](http://maven.apache.org/plugins/maven-help-plugin/describe-mojo.html) which provides handy goals to reveal what happen behind the scene. 
-
-    mvn help:help
-    
-    INFO] Maven Help Plugin 2.2
-      The Maven Help plugin provides goals aimed at helping to make sense out of the
-      build environment. It includes the ability to view the effective POM and
-      settings files, after inheritance and active profiles have been applied, as
-      well as a describe a particular plugin goal to give usage information.
-
-    This plugin has 9 goals:
-    ...    
-
-    help:describe
-      Displays a list of the attributes for a Maven Plugin and/or goals (aka Mojo -
-      Maven plain Old Java Object).
-    ...
-
 
 **references**
 
