@@ -20,7 +20,7 @@ As mentioned, a lot of maven behaviours is implicit (hidden), it is quite diffic
 
 **effective-pom**
 
-maven pom inherits properties from parent pom, which in turn inherits from parent of parent, the [build profiles](build_profile.md) makes even more complicated. `effective-pom` goal gives us what are exact properties of current `pom.xml`.
+maven pom inherits properties from parent pom, which in turn inherits from parent of parent, the [build profile](build_profile.md) makes even more complicated. `effective-pom` goal gives us what are exact properties of current `pom.xml`.
 
     $mvn help:effective-pom
 
