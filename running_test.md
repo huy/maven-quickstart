@@ -43,7 +43,9 @@ By default, the Surefire Plugin will automatically include all test classes with
 
 ## Integration test
 
-Integration tests are usually executed by maven failsafe plugin. This plugin needs to be explicitly added in to our `pom.xml` as 
+**failsafe plugin**
+
+Integration tests can be executed by maven failsafe plugin. This plugin needs to be explicitly added in to our `pom.xml` as 
 
         <plugins>
           <plugin>
@@ -76,6 +78,13 @@ The plugin provides the following goals
       Description: Verify integration tests ran using Surefire.
 
 The test classes to be executed are those of the following wildcard patterns `**/IT*.java`, `**/*IT.java`, `**/*ITCase.java`. Inclusion/exclusion is possible via a instruction [here](https://maven.apache.org/surefire/maven-failsafe-plugin/examples/inclusion-exclusion.html)
+
+**cargo with surefire**
+
+Other option is to use maven cargo plugin to manage a web container lifecycle (when system under test is container) and rebinding surefire plugin `test` goal to `integration test` phase. E.g.
+
+
+
 
 References
 
