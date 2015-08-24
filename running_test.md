@@ -81,10 +81,58 @@ The test classes to be executed are those of the following wildcard patterns `**
 
 **cargo with surefire**
 
-Other option is to use maven cargo plugin to manage a web container lifecycle (when system under test is container) and rebinding surefire plugin `test` goal to `integration test` phase. E.g.
+Other option is to use maven cargo plugin to manage a web container lifecycle (when system under test is container) and rebinding surefire plugin `test` goal to `integration test` phase. 
 
+Cargo configuration e.g.
 
+    <plugin>
+       <groupId>org.codehaus.cargo<groupId>
+       <artifactId>cargo-maven2-plugin<artifactId>
+       <configuration>
+          <wait>false<wait>
+       <configuration>
+       <executions>
+          <execution>
+             <id>start-server<id>
+             <phase>pre-integration-test<phase>
+             <goals>
+                <goal>start<goal>
+             <goals>
+          <execution>
+          <execution>
+             <id>stop-server<id>
+             <phase>post-integration-test<phase>
+             <goals>
+                <goal>stop<goal>
+             <goals>
+          <execution>
+       <executions>
+    <plugin>
 
+Surefire rebinding e.g.
+
+    <plugins>
+       <plugin>
+          <groupId>org.apache.maven.plugins<groupId>
+          <artifactId>maven-surefire-plugin<artifactId>
+          <executions>
+             <execution>
+                <phase>integration-test<phase>
+                <goals>
+                   <goal>test<goal>
+                <goals>
+                <configuration>
+                   <excludes>
+                      <exclude>none<exclude>
+                   <excludes>
+                   <includes>
+                      <include>***IntegrationTest.java<include>
+                   <includes>
+                <configuration>
+             <execution>
+          <executions>
+       <plugin>
+    <plugins>
 
 References
 
