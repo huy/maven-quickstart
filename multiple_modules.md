@@ -1,7 +1,17 @@
 # Mutiple modules
 
-Maven project can be structured into mutiple modules following parent children tree structure. A module corresponds a 
-folder containing a `pom.xml` file.
+Maven project can be structured into mutiple modules following parent children tree structure. A module corresponds a folder containing a `pom.xml` file. Parent packaging type is `pom` and specifies children's modules.
+
+    <groupId>org.sonatype.mavenbook.multi</groupId>
+    <artifactId>simple-parent</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0</version>
+    <name>Multi Chapter Simple Parent Project</name>
+    
+    <modules>
+        <module>simple-weather</module>
+        <module>simple-webapp</module>
+    </modules>
 
 
 
