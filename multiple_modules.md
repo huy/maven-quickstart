@@ -46,6 +46,8 @@ When Maven is executed against a project with submodules, Maven first loads the 
 
 Maven then puts all of these project POMs into something called the Maven Reactor which analyzes the dependencies between modules. The Reactor takes care of ordering components to ensure that interdependent modules are compiled and installed in the proper order.
 
+Once the Reactor figures out the order in which projects must be built, Maven then executes the specified goals for every module in the multi-module build.
+
 References
 
 * https://maven.apache.org/guides/mini/guide-multiple-modules.html
