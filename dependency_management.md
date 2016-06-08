@@ -36,4 +36,7 @@ Sometime, it is not possible to specify version in the `dependecyManagement`, e.
               </exclusions>
          </dependency>
 
+**references**
+
+* https://maven.apache.org/guides/introduction/introduction-to-optional-and-excludes-dependencies.html
 
