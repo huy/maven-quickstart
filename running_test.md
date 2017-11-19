@@ -41,6 +41,10 @@ The surefire plugin by default runs all test classes with the following wildcard
 By default, the Surefire Plugin will automatically include all test classes with the following wildcard patterns
 `**/Test*.java`, `**/*Test.java`, `**/*TestCase.java`. This can be changed as described [here](https://maven.apache.org/surefire/maven-surefire-plugin/examples/inclusion-exclusion.html)
 
+We can run single test by passing this command line option when running maven e.g.
+
+    mvn test -Dtest=AddConsoleScriptTest#testAddWorkerConsoleUrl
+
 ## Integration test
 
 **failsafe plugin**
@@ -78,6 +82,11 @@ The plugin provides the following goals
       Description: Verify integration tests ran using Surefire.
 
 The test classes to be executed are those of the following wildcard patterns `**/IT*.java`, `**/*IT.java`, `**/*ITCase.java`. Inclusion/exclusion is possible via a instruction [here](https://maven.apache.org/surefire/maven-failsafe-plugin/examples/inclusion-exclusion.html)
+
+We can run single test method by passing this command line option when running maven e.g.
+
+    mvn verify -Dit.test=AddConsoleScriptIT#testAddWorkerConsoleUrl
+
 
 **cargo with surefire**
 
